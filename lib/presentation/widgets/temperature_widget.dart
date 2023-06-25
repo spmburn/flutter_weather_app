@@ -5,11 +5,20 @@ import '../../config/theme/app_theme.dart';
 
 class TemperatureWidget extends StatelessWidget {
   final int temperaure;
-  final String date;
+  final String? date;
+  final double fontSize;
+  final double? fontSizeUnits;
+  final double translateUnits;
+  final Color color;
+
   const TemperatureWidget({
     super.key,
     required this.temperaure,
-    required this.date,
+    this.date,
+    this.fontSize = 64.0,
+    this.fontSizeUnits,
+    this.translateUnits = -10,
+    this.color = AppTheme.textColorDarkBrown,
   });
 
   @override
@@ -21,35 +30,36 @@ class TemperatureWidget extends StatelessWidget {
             Text(
               '$temperaure',
               style: GoogleFonts.alegreyaSans(
-                color: AppTheme.textColorDarkBrown,
-                fontSize: 64,
+                color: color,
+                fontSize: fontSize,
                 fontWeight: FontWeight.bold,
               ),
             ),
             Transform.translate(
-              offset: const Offset(0, -10),
+              offset: Offset(0, translateUnits),
               child: Text(
                 'ºC',
                 style: GoogleFonts.alegreyaSans(
-                  color: AppTheme.textColorDarkBrown,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
+                  color: color,
+                  fontSize: fontSizeUnits ?? fontSize / 4,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
           ],
         ),
-        Transform.translate(
-          offset: const Offset(0, -20),
-          child: Text(
-            date,
-            style: GoogleFonts.alegreyaSans(
-              color: AppTheme.textColorDarkBrown.withOpacity(0.5),
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
+        if (date != null)
+          Transform.translate(
+            offset: const Offset(0, -20),
+            child: Text(
+              date!,
+              style: GoogleFonts.alegreyaSans(
+                color: AppTheme.textColorDarkBrown.withOpacity(0.5),
+                fontSize: fontSize / 4,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
-        ),
       ],
     );
   }
