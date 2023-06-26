@@ -1,5 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/config/fonts/custom_icons_icons.dart';
 import 'package:flutter_template/config/theme/app_theme.dart';
@@ -18,8 +17,8 @@ class HomeScreen extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              AppTheme.cardMagenta,
-              AppTheme.cardLightGrey,
+              AppTheme.backgroundMagenta,
+              AppTheme.backgroundLightGrey,
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -32,37 +31,36 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               height: 400,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
+              child: Swiper(
                 itemCount: 10,
+                autoplay: false,
+                scale: 0.7,
+                viewportFraction: 0.7,
                 itemBuilder: (BuildContext context, int index) {
-                  return const Padding(
-                    padding: EdgeInsets.only(right: 20),
-                    child: CardInfo(),
-                  );
+                  return const CardInfoLocation();
                 },
               ),
             ),
             const Column(
               children: [
-                WeatherInfoWidget(
+                WeatherConditionWidget(
                   icon: CustomIcons.precipitation,
                   text: 'Precipitation',
                   value: '6%',
                 ),
-                WeatherInfoWidget(
+                WeatherConditionWidget(
                   icon: CustomIcons.humidity,
                   text: 'Humidity',
                   value: '90%',
                 ),
-                WeatherInfoWidget(
+                WeatherConditionWidget(
                   icon: CustomIcons.wind,
                   text: 'Wind',
                   value: '19km/h',
                 ),
               ],
             ),
-            CustomNavbar()
+            const CustomNavbar()
           ],
         ),
       ),
@@ -70,4 +68,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
