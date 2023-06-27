@@ -6,7 +6,7 @@
     <b><a href="#">Flutter Weather App</a></b>
 </h1>
 
-A repo of Flutter UI examples
+A simple project using The [Weatherapi.com][weatherapi] based on Flutter, Clean architecture and material designs & animations.
 
 [![Made-with-flutter](https://img.shields.io/badge/Made%20with-Flutter-orange)](https://flutter.dev/) 
 ![GitHub repo size](https://img.shields.io/github/repo-size/ivansaul/flutter_weather_app)
@@ -40,16 +40,17 @@ A repo of Flutter UI examples
 and much more...
 Check it yourself :)
 
+> **Note:** This project is not completed yet, as soon as possible when it's complete I will update it here. Stay tuned for more exciting updates!
+
 ## Screenshots
 
 <p align="center">
-  <img src="https://i.imgur.com/HPArEvf.png" alt="Screenshots">
-  <img src="https://i.imgur.com/IO1UrQX.png" alt="Screenshots">
+  <img src="https://i.imgur.com/GY7zKdb.png" alt="Screenshots">
 </p>
 
 ## Demo
 
-https://github.com/ivansaul/flutter_weather_app/assets/15005581/03f4bdd4-905e-4be7-baac-bcfc41c04719
+
 
 ## Packages we are using:
 
@@ -97,3 +98,5 @@ If you want to contact me you can reach me at [Discord][discord].
 ## License
 
 MIT
+
+[weatherapi]: https://www.weatherapi.com
