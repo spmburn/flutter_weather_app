@@ -69,6 +69,8 @@ Package | Usage
 
 1. If you don't have Flutter SDK installed, please visit official [Flutter](https://flutter.dev/) site.
 2. Fetch latest source code from master branch.
+3. Copy the `.env.template` and rename it to `.env`
+4. Change your [weatherapi.com](http://weatherapi.com/) API key.
 
 ```
 git clone https://github.com/ivansaul/flutter_weather_app.git
