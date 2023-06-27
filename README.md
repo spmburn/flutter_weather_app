@@ -24,22 +24,18 @@ A repo of Flutter UI examples
 
 ## Features
 
-- [x] Dark Mode
+- [x] Light Mode
 - [x] Home Screen
-- [x] Favorite Movies
-- [x] Top Rated Movies
-- [x] Reviews and ratings
-- [x] Movie Detail Screen
 - [x] Search Results Screen
-- [ ] Select by Categories
-- [ ] Login Screen
+- [x] Forecast Detail Screen
+- [x] Reviews and ratings
+- [ ] Dark Mode
+- [ ] Favorite Scren
+- [ ] Profile Screen
 - [ ] welcome screen
 - [ ] Splash Screen
-- [ ] Share Screen
-- [ ] Light Mode
 - [ ] Languages
 - [ ] Notification
-- [ ] Profile Screen
 
 and much more...
 Check it yourself :)
@@ -53,7 +49,7 @@ Check it yourself :)
 
 ## Demo
 
-https://github.com/ivansaul/flutter_cinemapedia_app/assets/15005581/03f4bdd4-905e-4be7-baac-bcfc41c04719
+https://github.com/ivansaul/flutter_weather_app/assets/15005581/03f4bdd4-905e-4be7-baac-bcfc41c04719
 
 ## Packages we are using:
 
@@ -75,7 +71,7 @@ Package | Usage
 2. Fetch latest source code from master branch.
 
 ```
-git clone https://github.com/ivansaul/flutter_cinemapedia_app.git
+git clone https://github.com/ivansaul/flutter_weather_app.git
 ```
 
 3. Run the app with Android Studio or VS Code. Or the command line:
