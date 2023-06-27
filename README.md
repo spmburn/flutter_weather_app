@@ -51,7 +51,11 @@ Check it yourself :)
 
 ## Demo
 
+<div align="center">
+    
+https://github.com/ivansaul/flutter_weather_app/assets/15005581/8455a579-79a5-4bb3-a5b8-fb252e4c637c
 
+</div>
 
 ## Packages we are using:
 
