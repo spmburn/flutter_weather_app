@@ -1,4 +1,4 @@
-import 'package:flutter_template/presentation/screens/home_screen.dart';
+import 'package:flutter_template/presentation/screens/screens.dart';
 import 'package:go_router/go_router.dart';
 
 final appRouter = GoRouter(
@@ -8,6 +8,6 @@ final appRouter = GoRouter(
       path: '/',
       name: HomeScreen.name,
       builder: (context, state) => const HomeScreen(),
-    )
+    ),
   ],
 );

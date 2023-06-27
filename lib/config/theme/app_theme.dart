@@ -10,9 +10,12 @@ class AppTheme {
     );
   }
 
+  // Background Color
+  static const Color backgroundMagenta = Color(0xffE75481);
+  static const Color backgroundLightGrey = Color(0xff929CDE);
+  static const Color backgroundWhite = Color(0xffFFFFFF);
+
   // Colors Card
-  static const Color cardMagenta = Color(0xffE75481);
-  static const Color cardLightGrey = Color(0xff929CDE);
 
   static const Color cardWhite = Color(0xffFBFBFB);
   static const Color cardPurple = Color(0xff5E4FC1);
@@ -32,131 +35,31 @@ class AppTheme {
   static const Color textColorPurple = Color(0xff5E4FC1);
   static const Color textColorLightBlue = Color(0xff658ED9);
   static const Color textColorWhite = Color(0xffFFFFFF);
+  static const Color textColorGray = Color(0xffC4C4C4);
 
   // Button text style
   static TextStyle buttonTextStyle = GoogleFonts.alegreyaSans(
     color: AppTheme.textColorWhite,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle h2Semibold = GoogleFonts.montserrat(
-    fontSize: 24,
-    fontWeight: FontWeight.w600,
-    color: textColorWhite,
+  static TextStyle locationTextStyleLarge = GoogleFonts.alegreyaSans(
+    color: AppTheme.textColorDarkBrown,
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
   );
-  static TextStyle h3Semibold = GoogleFonts.montserrat(
+  static TextStyle locationTextStyleMedium = GoogleFonts.alegreyaSans(
+    color: AppTheme.textColorDarkBrown,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
+  static TextStyle dateTextStyleMedium = GoogleFonts.montserrat(
+    color: AppTheme.textColorDarkBrown.withOpacity(0.5),
+    fontSize: 12,
+    fontWeight: FontWeight.bold,
+  );
+  static TextStyle dateTextStyleLarge = GoogleFonts.montserrat(
+    color: AppTheme.textColorDarkBrown,
     fontSize: 18,
-    fontWeight: FontWeight.w600,
-    color: textColorWhite,
-  );
-  static TextStyle h4Semibold = GoogleFonts.montserrat(
-    fontSize: 16,
-    fontWeight: FontWeight.w600,
-    color: textColorWhite,
-  );
-  static TextStyle h5Semibold = GoogleFonts.montserrat(
-    fontSize: 14,
-    fontWeight: FontWeight.w600,
-    color: textColorWhite,
-  );
-  static TextStyle h6Semibold = GoogleFonts.montserrat(
-    fontSize: 12,
-    fontWeight: FontWeight.w600,
-    color: textColorWhite,
-  );
-  static TextStyle h7Semibold = GoogleFonts.montserrat(
-    fontSize: 10,
-    fontWeight: FontWeight.w600,
-    color: textColorWhite,
-  );
-
-  // Heading text style Medium
-  static TextStyle h1Medium = GoogleFonts.montserrat(
-    fontSize: 28,
-    fontWeight: FontWeight.w500,
-    color: textColorWhite,
-  );
-  static TextStyle h2Medium = GoogleFonts.montserrat(
-    fontSize: 24,
-    fontWeight: FontWeight.w500,
-    color: textColorWhite,
-  );
-  static TextStyle h3Medium = GoogleFonts.montserrat(
-    fontSize: 18,
-    fontWeight: FontWeight.w500,
-    color: textColorWhite,
-  );
-  static TextStyle h4Medium = GoogleFonts.montserrat(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-    color: textColorWhite,
-  );
-  static TextStyle h5Medium = GoogleFonts.montserrat(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-    color: textColorWhite,
-  );
-  static TextStyle h6Medium = GoogleFonts.montserrat(
-    fontSize: 12,
-    fontWeight: FontWeight.w500,
-    color: textColorWhite,
-  );
-  static TextStyle h7Medium = GoogleFonts.montserrat(
-    fontSize: 10,
-    fontWeight: FontWeight.w500,
-    color: textColorWhite,
-  );
-
-  // Heading text style Regular
-  static TextStyle h1Regular = GoogleFonts.montserrat(
-    fontSize: 28,
-    fontWeight: FontWeight.w400,
-    color: textColorWhite,
-  );
-  static TextStyle h2Regular = GoogleFonts.montserrat(
-    fontSize: 24,
-    fontWeight: FontWeight.w400,
-    color: textColorWhite,
-  );
-  static TextStyle h3Regular = GoogleFonts.montserrat(
-    fontSize: 18,
-    fontWeight: FontWeight.w400,
-    color: textColorWhite,
-  );
-  static TextStyle h4Regular = GoogleFonts.montserrat(
-    fontSize: 16,
-    fontWeight: FontWeight.w400,
-    color: textColorWhite,
-  );
-  static TextStyle h5Regular = GoogleFonts.montserrat(
-    fontSize: 14,
-    fontWeight: FontWeight.w400,
-    color: textColorWhite,
-  );
-  static TextStyle h6Regular = GoogleFonts.montserrat(
-    fontSize: 12,
-    fontWeight: FontWeight.w400,
-    color: textColorWhite,
-  );
-  static TextStyle h7Regular = GoogleFonts.montserrat(
-    fontSize: 10,
-    fontWeight: FontWeight.w400,
-    color: textColorWhite,
-  );
-
-  // Paragraph TextStyle
-  static TextStyle bodySemibold = GoogleFonts.montserrat(
-    fontSize: 12,
-    fontWeight: FontWeight.w600,
-    color: textColorWhite,
-  );
-  static TextStyle bodyMedium = GoogleFonts.montserrat(
-    fontSize: 12,
-    fontWeight: FontWeight.w500,
-    color: textColorWhite,
-  );
-  static TextStyle bodyRegular = GoogleFonts.montserrat(
-    fontSize: 12,
-    fontWeight: FontWeight.w400,
-    color: textColorWhite,
+    fontWeight: FontWeight.bold,
   );
 }

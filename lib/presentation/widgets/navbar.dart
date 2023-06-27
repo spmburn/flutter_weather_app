@@ -1,6 +1,7 @@
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/config/fonts/custom_icons_icons.dart';
+import 'package:flutter_template/config/theme/app_theme.dart';
 
 class CustomNavbar extends StatefulWidget {
   const CustomNavbar({super.key});
@@ -10,36 +11,37 @@ class CustomNavbar extends StatefulWidget {
 }
 
 class _CustomNavbarState extends State<CustomNavbar> {
-   int indexSelected = 0;
+  int indexSelected = 0;
   @override
   Widget build(BuildContext context) {
-    const List<TabItem> items = [
+    List<TabItem> items = [
       TabItem(
         icon: CustomIcons.home,
-        title: 'Home',
+        title: indexSelected == 0 ? 'Home' : null,
       ),
       TabItem(
         icon: CustomIcons.search,
-        title: 'Search',
+        title: indexSelected == 1 ? 'Search' : null,
       ),
       TabItem(
         icon: CustomIcons.favorite,
-        title: 'Favarites',
+        title: indexSelected == 2 ? 'Favarites' : null,
       ),
-      
       TabItem(
         icon: CustomIcons.user,
-        title: 'Profile',
+        title: indexSelected == 3 ? 'Profile' : null,
       ),
     ];
     return BottomBarFloating(
+      animated: true,
+      duration: const Duration(microseconds: 2000),
       borderRadius: BorderRadius.circular(30),
       items: items,
-      backgroundColor: Colors.white,
-      color: Colors.blue,
-      colorSelected: Colors.orange,
+      backgroundColor: AppTheme.cardWhite,
+      color: AppTheme.textColorGray,
+      colorSelected: AppTheme.textColorPink,
+      paddingVertical: 20,
       indexSelected: indexSelected,
-      paddingVertical: 24,
       onTap: (int index) => setState(() {
         indexSelected = index;
       }),

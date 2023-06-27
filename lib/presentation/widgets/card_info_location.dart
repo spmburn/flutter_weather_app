@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_template/config/helpers/cloud_helper.dart';
 
+import '../../config/helpers/string_helper.dart';
 import '../../config/theme/app_theme.dart';
+import '../../domain/entities/weather.dart';
+import '../screens/screens.dart';
 import 'widgets.dart';
 
-class CardInfo extends StatelessWidget {
-  const CardInfo({super.key});
+class CardInfoLocation extends StatelessWidget {
+  final ForecastCurrent forecast;
+  const CardInfoLocation({
+    super.key,
+    required this.forecast,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,35 +33,31 @@ class CardInfo extends StatelessWidget {
             height: 250,
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(height: 50),
                 Text(
-                  'Los Angeles, CA, USA',
-                  style: GoogleFonts.alegreyaSans(
-                    color: AppTheme.textColorDarkBrown,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  '${forecast.location.name}, ${forecast.location.country}',
+                  style: AppTheme.locationTextStyleMedium,
                 ),
                 Row(
                   children: [
-                    const TemperatureWidget(
-                      temperaure: 15,
-                      date: 'Sunday, 11 am',
+                    TemperatureWidget(
+                      temperaure: forecast.current.tempC,
+                      date: StringHelper.formatDateTime(forecast.current.date),
                     ),
                     const Spacer(),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         ChipTextInfo(
-                          text: 'Strong winds',
+                          text: StringHelper.elipsis(forecast.current.description, 10),
                           color: AppTheme.cardCrimson.withOpacity(0.5),
                         ),
                         const SizedBox(height: 5),
                         ChipTextInfo(
-                          text: 'Cloudy',
+                          text: CloudHelper.getCloudName(forecast.current.cloud),
                           color: AppTheme.cardBlueViolet.withOpacity(0.5),
                         ),
                       ],
@@ -64,13 +67,23 @@ class CardInfo extends StatelessWidget {
               ],
             ),
           ),
-          const Positioned(
+          Positioned(
             bottom: 0,
-            child: CustomButton(),
+            child: CustomButton(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailScren(
+                    location: "${forecast.location.name}, ${forecast.location.country}",
+                  ),
+                ),
+              ),
+            ),
           ),
+          // TODO: Implement custom icon
           Positioned(
             top: -70,
-            child: Image.asset('assets/moon_cloud_fast_wind.png'),
+            child: Image.asset('assets/images/moon_cloud_fast_wind.png'),
           ),
         ],
       ),

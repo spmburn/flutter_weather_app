@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../config/theme/app_theme.dart';
 
 class TemperatureWidget extends StatelessWidget {
-  final int temperaure;
+  final double temperaure;
   final String? date;
   final double fontSize;
   final double? fontSizeUnits;
@@ -28,7 +28,7 @@ class TemperatureWidget extends StatelessWidget {
         Row(
           children: [
             Text(
-              '$temperaure',
+              '${temperaure.round()}',
               style: GoogleFonts.alegreyaSans(
                 color: color,
                 fontSize: fontSize,

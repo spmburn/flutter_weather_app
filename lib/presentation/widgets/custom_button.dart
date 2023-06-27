@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import '../../config/theme/app_theme.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
+  final void Function()? onTap;
+  const CustomButton({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class CustomButton extends StatelessWidget {
       child: Material(
         color: AppTheme.cardPurple,
         child: InkWell(
-          onTap: () {},
+          onTap: onTap,
           child: Padding(
             padding: const EdgeInsets.symmetric(
               vertical: 15,
