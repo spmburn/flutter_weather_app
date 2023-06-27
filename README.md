@@ -30,6 +30,7 @@ A simple project using The [Weatherapi.com][weatherapi] based on Flutter, Clean 
 - [x] Forecast Detail Screen
 - [x] Reviews and ratings
 - [ ] Dark Mode
+- [ ] Pull to refresh
 - [ ] Favorite Scren
 - [ ] Profile Screen
 - [ ] welcome screen
@@ -100,3 +101,6 @@ If you want to contact me you can reach me at [Discord][discord].
 MIT
 
 [weatherapi]: https://www.weatherapi.com
+[discord]: https://discord.com/users/744755977684779038
+[discord-server]: https://discord.gg/b72uAVBz6b
+[issue]: https://github.com/ivansaul/flutter_weather_app/issues
