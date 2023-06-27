@@ -20,4 +20,9 @@ class WeatherUsecaseImpl extends WeatherUsecase {
   Future<ForescastWeek> getForecastWeek(String query) {
     return weatherRepository.getForecastWeek(query);
   }
+
+  @override
+  Future<List<Location>> searchLocation(String query) {
+    return weatherRepository.searchLocation(query);
+  }
 }

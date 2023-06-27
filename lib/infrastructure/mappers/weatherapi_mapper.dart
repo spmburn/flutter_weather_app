@@ -1,4 +1,5 @@
 import 'package:flutter_template/infrastructure/models/weatherapi/forecast_day_response.dart';
+import 'package:flutter_template/infrastructure/models/weatherapi/search_response.dart';
 
 import '../../domain/entities/weather.dart';
 import '../models/weatherapi/current.dart';
@@ -79,6 +80,16 @@ class WeatherapiMapper {
           );
         },
       ).toList(),
+    );
+  }
+
+  static Location weapiSearchToEntitie(SearchWeatherapi searchWeatherapi) {
+    return Location(
+      name: searchWeatherapi.name,
+      region: searchWeatherapi.region,
+      country: searchWeatherapi.country,
+      lat: searchWeatherapi.lat,
+      lon: searchWeatherapi.lon,
     );
   }
 }

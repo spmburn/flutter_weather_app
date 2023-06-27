@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_template/infrastructure/mappers/weatherapi_mapper.dart';
 import 'package:flutter_template/infrastructure/models/weatherapi/forecast_day_response.dart';
+import 'package:flutter_template/infrastructure/models/weatherapi/search_response.dart';
 
 import '../../config/env/env.dart';
 import '../../domain/entities/weather.dart';
@@ -59,5 +60,20 @@ class WeatherRepositoryImpl extends WeatherRepository {
     final weatherapiWeek = WeatherapiDay.fromJson(response.data);
     final forecastWeek = WeatherapiMapper.weapiWeekToEntitie(weatherapiWeek);
     return forecastWeek;
+  }
+
+  @override
+  Future<List<Location>> searchLocation(String query) async {
+    final response = await _dio.get(
+      '/search.json',
+      queryParameters: {'q': query},
+    );
+    final List<dynamic> dataList = response.data;
+    final locations = dataList.map((item) {
+      final searchweatherapi = SearchWeatherapi.fromJson(item);
+      return WeatherapiMapper.weapiSearchToEntitie(searchweatherapi);
+    }).toList();
+
+    return locations;
   }
 }

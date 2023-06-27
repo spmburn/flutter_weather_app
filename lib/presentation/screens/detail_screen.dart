@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/config/constants/constants.dart';
@@ -140,9 +141,12 @@ class _SliverHeader extends SliverPersistentHeaderDelegate {
         Positioned(
           right: 10,
           top: 0,
-          child: Image.asset(
-            'assets/images/sun_ cloud_rain.png',
-            scale: 0.6,
+          child: FadeIn(
+            // TODO: IMPLEMENT CUSTOM ICON
+            child: Image.asset(
+              'assets/images/sun_ cloud_rain.png',
+              scale: 0.6,
+            ),
           ),
         ),
         Positioned(
@@ -156,9 +160,11 @@ class _SliverHeader extends SliverPersistentHeaderDelegate {
                 child: Image.asset('assets/icons/arrow_back.png'),
               ),
               const SizedBox(height: 30),
-              Text(
-                location.replaceAll(',', '\n'),
-                style: AppTheme.locationTextStyleLarge,
+              FadeInRight(
+                child: Text(
+                  location.replaceAll(',', '\n'),
+                  style: AppTheme.locationTextStyleLarge,
+                ),
               ),
               TemperatureWidget(
                 temperaure: forecast.current.tempC,
