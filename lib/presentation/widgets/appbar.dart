@@ -1,10 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/presentation/providers/providers.dart';
 import 'package:flutter_template/presentation/widgets/widgets.dart';
 
-import '../../config/fonts/custom_icons_icons.dart';
-import '../../config/theme/app_theme.dart';
 import '../delegates/search_delegate.dart';
 
 class AppBarWidget extends ConsumerWidget {
@@ -27,8 +26,8 @@ class AppBarWidget extends ConsumerWidget {
             );
           },
           icon: const Icon(
-            CustomIcons.filter,
-            color: AppTheme.textColorWhite,
+            CupertinoIcons.search,
+            color: Colors.white,
           ),
         ),
       ],

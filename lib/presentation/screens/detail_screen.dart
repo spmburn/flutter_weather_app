@@ -124,8 +124,8 @@ class _Todayview extends StatelessWidget {
   }
 }
 
-double _minExtent = 320;
-double _maxExtent = 320;
+double _minExtent = 330;
+double _maxExtent = 330;
 
 class _SliverHeader extends SliverPersistentHeaderDelegate {
   final ForecastCurrent forecast;
@@ -170,23 +170,27 @@ class _SliverHeader extends SliverPersistentHeaderDelegate {
                 temperaure: forecast.current.tempC,
                 fontSize: 96.0,
               ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                ChipTextIconInfo(
-                  text: '${weather.precipMm}mm',
-                  color: AppTheme.textColorLightBlue,
-                  iconData: CustomIcons.precipitation,
-                ),
-                ChipTextIconInfo(
-                  text: '${weather.humidity}%',
-                  color: AppTheme.textColorLightBlue,
-                  iconData: CustomIcons.humidity,
-                ),
-                ChipTextIconInfo(
-                  text: '${weather.windKph}km/h',
-                  color: AppTheme.textColorPurple,
-                  iconData: CustomIcons.wind,
-                ),
-              ])
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ChipTextIconInfo(
+                    text: '${weather.precipMm}mm',
+                    color: AppTheme.textColorLightBlue,
+                    iconData: CustomIcons.precipitation,
+                  ),
+                  ChipTextIconInfo(
+                    text: '${weather.humidity}%',
+                    color: AppTheme.textColorLightBlue,
+                    iconData: CustomIcons.humidity,
+                  ),
+                  ChipTextIconInfo(
+                    text: '${weather.windKph}km/h',
+                    color: AppTheme.textColorPurple,
+                    iconData: CustomIcons.wind,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
             ],
           ),
         ),
